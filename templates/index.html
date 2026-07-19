@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Registry</h1>
+
+        <form action="/add" method="POST" class="form-add">
+            <input type="text" name="name" placeholder="Enter Name" required autocomplete="off">
+            <input type="text" name="dept" placeholder="Dept" required autocomplete="off">
+            <input type="number" name="year" placeholder="Year" required min="1" max="4" autocomplete="off">
+            <button type="submit">Add Student</button>
+        </form>
+
+        <ul class="student-list">
+            {% for student in students %}
+            <li>
+                <div class="student-details">
+                    <strong>{{ student.name }}</strong>
+                    <span class="dept-year">{{ student.dept }} — Year {{ student.year }}</span>
+                </div>
+                <form action="/delete/{{ loop.index0 }}" method="POST">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </li>
+            {% else %}
+            <li class="empty">No students registered yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
