@@ -1,39 +1,40 @@
 body {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 50px;
+    font-family: system-ui, sans-serif;
+    background-color: #f3f4f6;
+    margin: 40px 20px;
+    display: flex;
+    justify-content: center;
 }
-
-input {
-    padding: 8px;
+.container {
+    width: 100%; max-width: 500px;
+    background: white; padding: 24px;
+    border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
-
-button {
-    padding: 8px 15px;
+h1 { font-size: 24px; text-align: center; margin-bottom: 20px; }
+.form-add {
+    display: flex; flex-direction: column;
+    gap: 10px; margin-bottom: 20px;
 }
-
-ul {
-    list-style: none;
+.form-add input { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 4px; }
+.form-add button {
+    padding: 10px; background-color: #2563eb; color: white;
+    border: none; border-radius: 4px; cursor: pointer; font-weight: 500;
 }
-
-li {
-    margin: 10px;
+.form-add button:hover { background-color: #1d4ed8; }
+.student-list { list-style: none; padding: 0; }
+.student-list li {
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 10px 0; border-bottom: 1px solid #e5e7eb;
 }
-
-a {
-    color: red;
-    text-decoration: none;
-    margin-left: 10px;
+.student-details { display: flex; flex-direction: column; gap: 2px; }
+.dept-year { font-size: 13px; color: #6b7280; }
+.actions { display: flex; gap: 8px; align-items: center; }
+.btn-edit, .btn-delete {
+    padding: 6px 12px; border-radius: 4px; border: none; cursor: pointer;
+    font-size: 13px; text-decoration: none; font-weight: 500;
 }
-button {
-    background-color: red;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.8;
-}
+.btn-edit { background-color: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+.btn-edit:hover { background-color: #e5e7eb; }
+.btn-delete { background-color: #ef4444; color: white; }
+.btn-delete:hover { background-color: #dc2626; }
+.empty { color: #6b7280; text-align: center; }
